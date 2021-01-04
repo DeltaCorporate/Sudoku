@@ -67,7 +67,7 @@ public class utils {
     public static int recupNombre(String element, int min, int max){
         Scanner saisie = new Scanner(System.in);
         String valeur;
-        System.out.println("Quelle est la "+element + " :");
+        System.out.println("Quelle est la "+element + " : (Tapez "+min +" pour supprimer le contenu d'une case erroné");
         valeur = saisie.next();
         boolean estUnNombreValeur;
         boolean valeurNonValide;
@@ -88,7 +88,7 @@ public class utils {
 //correspond aux informations de la case à intégrer
     public static int[] infosValeur(){
         int[] tabValeursInfos= new  int[3];
-        int valeur = utils.recupNombre("valeur", 1, 9);
+        int valeur = utils.recupNombre("valeur", 0, 9);
         tabValeursInfos[0] = valeur;
         int ligne = utils.recupNombre("ligne", 1, 9);
         tabValeursInfos[1] = ligne-1;
@@ -124,7 +124,7 @@ public class utils {
 //affiche le menu
     public static int[][] menu(){
 //        tableau vide a retourner par défaut
-        int [][] dafaultEmpty = new int[0][0];
+        int [][] defaultEmpty = new int[0][0];
         Scanner saisie = new Scanner(System.in);
         String valeur;
         String menu;
@@ -162,9 +162,9 @@ public class utils {
                 return Tableaux.niv4;
             case "5":
                 System.out.println("Vous avez quitté la partie");
-                return dafaultEmpty;
+                return defaultEmpty;
         }
-        return dafaultEmpty;
+        return defaultEmpty;
     }
 
 
